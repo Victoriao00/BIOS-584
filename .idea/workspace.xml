@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fdc947f-957b-4af5-b8e7-64dd1228bd13" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lecture notes/self_py_fun.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/self_py_fun.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/HW7-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/HW7-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW7.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/HW7.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week-07-numpy-array-continued.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/week-07-numpy-array-continued.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Quiz3-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quiz3.ipynb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +41,16 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/victoriaostebo/Documents/GitHub/BIOS-584&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/lecture notes" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
