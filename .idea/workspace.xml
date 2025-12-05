@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9fdc947f-957b-4af5-b8e7-64dd1228bd13" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Quiz4-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Quiz4-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz4.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz4.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/self_py_fun/HW10.py" beforeDir="false" afterPath="$PROJECT_DIR$/self_py_fun/HW10.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +34,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.HW10.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -47,6 +47,9 @@
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/lecture notes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/self_py_fun" />
     </key>
   </component>
   <component name="SharedIndexes">
