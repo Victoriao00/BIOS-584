@@ -26,7 +26,7 @@ bp_low = 0.5
 bp_upp = 6
 electrode_num = 16
 # Change the following directory to your own one.
-parent_dir = '/'
+parent_dir = '/Users/victoriaostebo/Documents/GitHub/BIOS-584'
 parent_data_dir = '{}/data'.format(parent_dir)
 
 time_index = np.linspace(0, 800, 25)
@@ -59,9 +59,15 @@ eeg_trn_type = np.squeeze(eeg_trn_type, axis=1)
 # you should be able to obtain relevant data files named
 # eeg_frt_signal and eeg_frt_type
 # Write your own code below:
+frt_data_name = '{}_001_BCI_FRT_Truncated_Data_{}_{}'.format(subject_name, bp_low, bp_upp)
+frt_data_dir = '{}/{}.mat'.format(parent_data_dir, frt_data_name)
+eeg_frt_obj = sio.loadmat(frt_data_dir)
 
-
-
+eeg_frt_signal = eeg_frt_obj['Signal']
+print(eeg_frt_signal.shape)
+eeg_frt_type = eeg_frt_obj['Type']
+print(eeg_frt_type.shape)
+eeg_frt_type = np.squeeze(eeg_frt_type, axis=1)
 
 # You have completed the exploratory data analysis in HW7 and HW8.
 # The dataset has been carefully reviewed by Dr. Jane E. Huggins,
@@ -76,8 +82,14 @@ eeg_trn_type = np.squeeze(eeg_trn_type, axis=1)
 # except for LogisticRegression: set max_iter=1000
 # Write your own code below:
 
+logistic_model = LR(max_iter=1000)
+logistic_model.fit(eeg_trn_signal, eeg_trn_type)
 
+lda_model = LDA()
+lda_model.fit(eeg_trn_signal, eeg_trn_type)
 
+svm_model = SVC(probability=True)
+svm_model.fit(eeg_trn_signal, eeg_trn_type)
 
 
 # Step 3: Evaluate model performance on both TRN and FRT files
@@ -88,8 +100,9 @@ eeg_trn_type = np.squeeze(eeg_trn_type, axis=1)
 # denoted as logistic_y_trn, lda_y_trn, and svm_y_trn.
 # Write your own code below:
 
-
-
+logistic_y_trn = logistic_model.predict_proba(eeg_trn_signal)
+lda_y_trn = lda_model.predict_proba(eeg_trn_signal)
+svm_y_trn = svm_model.predict_proba(eeg_trn_signal)
 
 
 # Step 3.2: Prediction accuracy on FRT files
@@ -97,14 +110,15 @@ eeg_trn_type = np.squeeze(eeg_trn_type, axis=1)
 # denoted as logistic_y_frt, lda_y_frt, and svm_y_frt.
 # Write your own code below:
 
-
+logistic_y_frt = logistic_model.predict_proba(eeg_frt_signal)
+lda_y_frt = lda_model.predict_proba(eeg_frt_signal)
+svm_y_frt = svm_model.predict_proba(eeg_frt_signal)
 
 
 
 # Step 4: Convert binary classification probability to character-level accuracy
 # This involves advanced data manipulation, so you do not need to write any new code.
 # Please run the following code to view the final results.
-'''
 eeg_trn_code = eeg_trn_obj['Code']
 eeg_frt_code = eeg_frt_obj['Code']
 char_frt = convert_raw_char_to_alphanumeric_stype(eeg_frt_obj['Text'])
@@ -177,7 +191,6 @@ print(svm_trn_accuracy)
 print(logistic_frt_accuracy)
 print(lda_frt_accuracy)
 print(svm_frt_accuracy)
-'''
 
 # Remember to answer two questions below:
 
@@ -191,5 +204,14 @@ print(svm_frt_accuracy)
 # svm_trn_accuracy = np.mean(svm_letter_mat_trn == np.array(list(char_trn))[:, np.newaxis], axis=0)
 # svm_frt_accuracy = np.mean(svm_letter_mat_frt == np.array(list(char_frt))[:, np.newaxis], axis=0)
 
+#These lines of code calculate how accurate each classification model is at predicting the correct characters.
+# Basically, they compare what the model predicted against what the actual correct answer is.
+# The [:, np.newaxis] part reshapes the true characters so they can be compared across all the different repetition levels,
+# and then np.mean(..., axis=0) averages the accuracy across all characters to see how well the model did at each repetition level.
+
+
 # Step 5: Summary
 # Which method performs the best? Why?
+
+# According to the data, SVM performs the best. This is due to it achieving 100% after 4 repetitions.
+# The other 2 methods, Logistic Regression and LDA, only reach about 96.3%. SVM does better because it is really good at working with lots of features and can find complex patterns
