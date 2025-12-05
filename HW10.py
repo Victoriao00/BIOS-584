@@ -205,13 +205,19 @@ print(svm_frt_accuracy)
 # svm_frt_accuracy = np.mean(svm_letter_mat_frt == np.array(list(char_frt))[:, np.newaxis], axis=0)
 
 #These lines of code calculate how accurate each classification model is at predicting the correct characters.
-# Basically, they compare what the model predicted against what the actual correct answer is.
-# The [:, np.newaxis] part reshapes the true characters so they can be compared across all the different repetition levels,
-# and then np.mean(..., axis=0) averages the accuracy across all characters to see how well the model did at each repetition level.
-
+# # These lines calculate how accurate each model is at predicting the right characters.
+# They basically compare what the model predicted to the actual correct answers.
+# The [:, np.newaxis] part reshapes the data so we can compare the predictions across all the different repetition levels,
+# and the part np.mean and axis=0 averages everything to show how accurate the model was at each repetition.
+# sorry for so many comments, I didn't know how to make it a paragraph.
 
 # Step 5: Summary
 # Which method performs the best? Why?
+
+#My output:
+[0.62962963 0.88888889 0.92592593 0.96296296]
+[0.7037037  0.85185185 0.92592593 0.96296296]
+[0.62962963 0.88888889 0.92592593 1.        ]
 
 # According to the data, SVM performs the best. This is due to it achieving 100% after 4 repetitions.
 # The other 2 methods, Logistic Regression and LDA, only reach about 96.3%. SVM does better because it is really good at working with lots of features and can find complex patterns
